@@ -30,17 +30,15 @@ export default function Home() {
             Coming Soon
           </AuroraText>
         </h1>
-        <p className="text-xl md:text-2xl text-neutral-700 dark:text-neutral-300 mb-8">
-          🏀 Dribbling into the digital court... 🏀
-          <br />
-          <span className="inline-block my-4">✨ Where passion meets precision, and hoops meet hopes ✨</span>
-          <br />
-          <span className="inline-block mb-4">🔥 Vietnam Basketball Academy is crafting something legendary 🔥</span>
-          <br />
-          <span className="italic">Bounce back soon for the ultimate basketball experience!</span>
-          <br />
-          <span className="inline-block mt-6 font-semibold">🏆 Game changing. Court shaking. History making. 🏆</span>
-        </p>
+        <div className="text-xl md:text-2xl text-neutral-700 dark:text-neutral-300 space-y-2 mb-8">
+          <p className="font-medium">🏀 Vietnam Basketball Academy 🏀</p>
+          <p className="italic">
+            ✨ Where passion meets precision ✨
+          </p>
+          <p className="font-semibold mt-4">
+            <span className="text-primary-dark">Game changing.</span> <span className="text-secondary-dark">Court shaking.</span> <span className="text-accent-dark">History making.</span> 🏆
+          </p>
+        </div>
       </div>
     </main>
   );
