@@ -35,6 +35,9 @@ jobs:
       
       - name: Build with Next.js
         run: npm run build
+        env:
+          # This enables the basePath setting
+          GITHUB_ACTIONS: true
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
