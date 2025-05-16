@@ -31,13 +31,13 @@ export const AuroraText = memo(
         <span
           className="relative animate-aurora bg-[length:200%_auto] bg-clip-text text-transparent"
           style={gradientStyle}
-          aria-hidden="true"
+          aria-hidden
         >
           {children}
         </span>
       </span>
     );
-  },
+  }
 );
 
 AuroraText.displayName = "AuroraText"; 
