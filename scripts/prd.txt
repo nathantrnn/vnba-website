@@ -1,0 +1,696 @@
+# Vietnam Basketball Academy Website - Product Requirements Document
+
+## Overview
+
+The Vietnam Basketball Academy (VNBA) website will serve as a premium digital platform to establish VNBA as the leading basketball training academy in Vietnam for youth development. This static marketing website will showcase VNBA's age-based basketball programs, introduce coaching staff, and drive trial sign-ups through an optimized conversion funnel.
+
+The website targets upper-middle-class Vietnamese families and international expatriates in major urban centers who are seeking quality basketball training for their children (ages 6-16+). It solves the problem of program discovery, trust establishment, and streamlined lead generation through a visually compelling, high-performance static website that requires minimal maintenance.
+
+With a budget of $10,000 and a timeline of 3-4 months, this website will deliver a world-class user experience through premium design, animations, and media while maintaining exceptional technical performance and accessibility standards.
+
+## Core Features
+
+### 1. Immersive Homepage Experience
+**What it does:** Creates an immediate impact with a hero video section, pop-up for first-time visitors, and a comprehensive overview of VNBA's offerings.
+
+**Why it's important:** Establishes brand credibility and provides multiple entry points to the conversion funnel within the first few seconds of interaction.
+
+**How it works:** 
+- First-time visitor popup featuring summer camp CTA
+- Hero video showcasing Official USA Basketball Programs (licensed content)
+- Feature highlights section (basketball training, strength training, open gym)
+- Vietnam Youth Basketball League section
+- Programs overview with interactive cards
+- Testimonial showcase from parents and players
+- VNBA camps highlight section
+- OMG Recreation Center (VNBA Court) presentation
+- Partner logos and affiliations
+- 3-step process visualization (register, free practice and assessment, start)
+- Strong CTA for trial registration
+- Comprehensive footer with quick links
+
+### 2. Program Discovery and Selection
+**What it does:** Presents detailed information about each age-based program with interactive class cards, weekly schedule visualization, and enrollment options.
+
+**Why it's important:** Helps parents identify the right program for their child's age and skill level, addressing specific developmental needs.
+
+**How it works:**
+- Interactive class cards for each program category:
+  - Introductory (6-8 years)
+  - Foundational (9-12 years)
+  - Advanced (13-16 years)
+  - Performance (16+ years)
+  - Girls program
+- Weekly training schedule visualization
+- Interactive FAQ accordion addressing common questions
+- Program-specific CTAs linking to trial sign-up forms
+
+### 3. Lead Generation System
+**What it does:** Captures prospect information through strategically placed Google Forms and delivers it to VNBA's database for follow-up.
+
+**Why it's important:** Converts website visitors into potential customers through a frictionless lead capture process.
+
+**How it works:**
+- Embedded Google Forms throughout the site
+- Form responses captured in Google Sheets
+- Program-specific form pre-filling where applicable
+- Confirmation page with next steps after submission
+- Google Tag Manager tracking for conversion analytics
+
+### 4. Court Booking Information
+**What it does:** Provides detailed information about VNBA's facilities and links to Google Calendar Appointment Schedule for court reservations.
+
+**Why it's important:** Creates an additional revenue stream through court rentals and maximizes facility utilization.
+
+**How it works:**
+- OMG Recreation Center overview with premium photography
+- Other sports/recreation partnership information
+- Comparison between full-court and half-court options
+- Visual availability teaser
+- Direct linking to Google Calendar Appointment Schedule for booking
+- Pricing and facility details
+
+### 5. Brand Storytelling
+**What it does:** Communicates VNBA's mission, values, and coaching philosophy to build emotional connection and trust.
+
+**Why it's important:** Differentiates VNBA from competitors by highlighting its unique approach to player development.
+
+**How it works:**
+- Coach Myke's founding story and vision
+- Mission and philosophy statements emphasizing holistic development
+- Coaches grid showcasing credentials and expertise
+- Community impact highlights and success stories
+- Partner logos establishing credibility through association
+
+### 6. Premium Visual Design and Animations
+**What it does:** Elevates the user experience through sophisticated design elements and interactive animations. Using Magic UI MCP for the animations and components.
+
+**Why it's important:** Creates a memorable brand impression that aligns with VNBA's premium positioning.
+
+**How it works:**
+- GSAP animations for page transitions and interactive elements
+- Animated navbar with burger button animations (mobile and desktop)
+- Using Magic UI Header 4 for the floating header.
+- Micro-interactions providing visual feedback
+- Consistent brand elements (colors, typography, imagery)
+- High-quality media content showcasing the academy environment
+
+## User Experience
+
+### User Personas
+
+#### Primary: Parent of Young Basketball Player
+- **Name:** Minh Nguyen
+- **Age:** 38
+- **Demographics:** Upper-middle-class Vietnamese professional
+- **Goals:** Find a reputable basketball program for his 10-year-old son that emphasizes both skill development and character building
+- **Pain Points:** Difficulty finding quality sports programs with professional coaching; concerned about balancing academics with sports
+- **Motivations:** Wants his child to develop confidence, teamwork skills, and healthy habits through sports
+
+#### Secondary: International Expatriate Parent
+- **Name:** Sarah Johnson
+- **Age:** 42
+- **Demographics:** American expatriate living in Ho Chi Minh City
+- **Goals:** Find an English-speaking basketball program similar to those available in her home country
+- **Pain Points:** Cultural and language barriers when researching local sports options; seeking programs with international standards
+- **Motivations:** Wants cultural continuity for her children while living abroad; values high-quality coaching and facilities
+
+#### Tertiary: School Administrator
+- **Name:** Principal Tran
+- **Age:** 45
+- **Demographics:** Administrator at international school in Vietnam
+- **Goals:** Find quality after-school sports partners for students
+- **Pain Points:** Limited space on campus for sports; needs reliable external partners
+- **Motivations:** Wants to offer students comprehensive extracurricular options that align with the school's values
+
+### Key User Flows
+
+#### 1. New Parent Lead Generation Flow
+1. Arrives on homepage via search or social media
+2. Views first-time visitor popup (summer camp CTA)
+3. Watches hero video
+4. Browses program cards to find age-appropriate option
+5. Clicks to program detail page
+6. Reviews program specifics and weekly schedule
+7. Reads FAQ section
+8. Clicks "Book Free Trial" CTA
+9. Completes Google Form for trial sign-up
+10. Receives confirmation with next steps
+
+#### 2. Court Rental Customer Flow
+1. Navigates to Courts page from main navigation
+2. Reviews facility details and photos
+3. Compares full-court vs. half-court options
+4. Checks availability teaser
+5. Clicks booking CTA
+6. Redirects to Google Calendar Appointment Schedule
+7. Selects preferred date and time
+8. Completes booking process
+9. Receives confirmation
+
+#### 3. Information Research Flow
+1. Lands on About page
+2. Reads Coach Myke's story and VNBA mission
+3. Browses coaches' credentials
+4. Navigates to Programs page
+5. Views different program options
+6. Reads testimonials on homepage
+7. Navigates to Contact page
+8. Reviews FAQ section
+9. Submits inquiry form with specific questions
+10. Receives follow-up information
+
+### UI/UX Considerations
+
+- **Mobile-First Approach:** Prioritizing mobile experience with touch-optimized interactions while ensuring desktop experience remains premium
+- **Progressive Disclosure:** Layering information from general to specific to prevent overwhelming users
+- **Visual Hierarchy:** Using size, color, and positioning to guide attention to key conversion elements
+- **Consistent Navigation:** Maintaining orientation with clear wayfinding and persistent CTAs
+- **Loading States:** Providing visual feedback during transitions and data loading
+- **Accessibility:** Ensuring all interactive elements are keyboard accessible with appropriate ARIA attributes
+- **Performance:** Optimizing animations and media to prevent lag or jank that would diminish the premium feel
+- **Form Design:** Minimizing friction in lead capture forms with clear labels and error handling
+- **Content Chunking:** Breaking content into digestible sections with clear headings and concise copy
+- **Social Proof Integration:** Strategically placing testimonials and success stories near decision points
+
+## Technical Architecture
+
+### System Components
+
+#### 1. Frontend Framework
+- Next.js 13+ with TypeScript
+- Static Site Generation (SSG) with `next export`
+- Component-based architecture with reusable UI elements
+- Client-side hydration for interactive elements
+
+#### 2. Styling and Animations
+- Tailwind CSS for responsive styling
+- Custom Tailwind configuration for brand colors and typography
+- GSAP (GreenSock Animation Platform) for complex animations
+- CSS animations for simpler interactions
+- Responsive design system with consistent breakpoints
+
+#### 3. Media Management
+- Next.js Image component for responsive image optimization
+- Video hosting via external service (YouTube/Vimeo) with custom player styling
+- SVG animations for lightweight interactive elements
+- WebP image format with fallbacks for older browsers
+
+#### 4. Form and Booking System
+- Google Forms with custom styling overlays
+- Google Sheets for data capture and management
+- Google Calendar Appointment Schedules for court bookings
+- Custom form validation on the client side
+
+#### 5. Analytics and Tracking
+- Google Tag Manager container
+- Google Analytics 4 implementation
+- Event tracking for key user interactions and conversions
+- Custom conversion goals configuration
+
+#### 6. Performance Optimization
+- Static asset optimization (images, fonts, scripts)
+- Code splitting and lazy loading
+- Critical CSS extraction
+- Browser caching strategies
+- Cloudflare CDN configuration
+
+### Data Models
+
+#### Program Class
+- ID (unique identifier)
+- Name (e.g., "Foundational Program")
+- Age Range (e.g., "9-12 years")
+- Description (detailed program information)
+- Schedule (weekly training times)
+- Benefits (key advantages of the program)
+- Pricing (cost information)
+- CTALink (link to relevant sign-up form)
+- FeaturedImage (visual representation)
+
+#### Coach Profile
+- ID (unique identifier)
+- Name (coach's full name)
+- Title (position at VNBA)
+- Bio (professional background)
+- Credentials (certifications and qualifications)
+- Photo (professional headshot)
+- Specialties (areas of coaching expertise)
+
+#### Testimonial
+- ID (unique identifier)
+- AuthorName (name of parent/player)
+- AuthorRole (e.g., "Parent of U12 Player")
+- Content (testimonial text)
+- Rating (optional numerical rating)
+- ProgramReference (associated program)
+- Photo (optional author image)
+
+#### Court Information
+- ID (unique identifier)
+- Type (full-court or half-court)
+- Features (court specifications)
+- Availability (general availability information)
+- PricePerHour (rental cost)
+- BookingLink (link to Google Calendar)
+- Images (court photos)
+
+### APIs and Integrations
+
+#### Google Services Integration
+- Google Forms API for trial sign-ups
+- Google Sheets API for data storage
+- Google Calendar API for court booking display
+- Google Maps API for location embedding
+- Google Tag Manager for analytics deployment
+
+#### Content Delivery
+- Cloudflare CDN for static asset delivery
+- Image optimization and delivery pipeline
+- Font loading optimization
+
+#### Third-Party Services
+- Mailchimp or similar for newsletter sign-up (optional)
+- Social media platform embeds/integrations
+
+### Infrastructure Requirements
+
+#### Hosting Environment
+- Matbao shared hosting for static files
+- SFTP access for manual deployments
+- PHP support for potential server-side functionality
+
+#### Domain and DNS
+- Primary domain configuration
+- Cloudflare DNS management
+- SSL certificate implementation
+- Redirects and canonical URL setup
+
+#### Deployment Pipeline
+- GitHub repository for version control
+- GitHub Actions for CI/CD automation
+- Build and optimization processes
+- Automated testing before deployment
+
+#### Monitoring and Maintenance
+- Uptime monitoring
+- Performance tracking
+- Periodic security updates
+- Backup strategy
+
+## Development Roadmap
+
+### Phase 1: Foundation (MVP Core)
+- Project setup and repository configuration
+- Next.js with TypeScript and Tailwind CSS implementation
+- Design system creation based on brand guidelines
+  - Color palette implementation
+  - Typography system setup
+  - Component library foundation
+  - Responsive grid system
+- Base page templates and layouts
+  - Header with navigation structure
+  - Footer with essential links
+  - Page container components
+  - Responsive breakpoints
+- Core routing implementation
+- Initial accessibility setup
+- Deployment pipeline configuration
+
+### Phase 2: Content Structure (MVP Essential)
+- Homepage framework
+  - Hero section structure
+  - Feature grid layout
+  - Program cards component
+  - Testimonial section structure
+  - 3-step process visualization
+  - CTA component design
+- About page framework
+  - Story section layout
+  - Mission/values component
+  - Coaches grid structure
+- Programs page framework
+  - Program card component
+  - Schedule visualization structure
+  - FAQ accordion component
+- Courts page framework
+  - Court information layout
+  - Booking section structure
+- Contact page implementation
+  - Form embedding structure
+  - Map integration
+  - Contact information layout
+- Legal pages structure (Privacy, Terms)
+
+### Phase 3: Interactive Elements (MVP Enhancement)
+- GSAP animation framework implementation
+- Navbar animations (mobile and desktop)
+  - Burger button animation
+  - Dropdown interactions
+  - Scroll behavior
+- Page transition animations
+- Scroll-triggered animations
+- Interactive card hover effects
+- Testimonial carousel functionality
+- FAQ accordion functionality
+- Program selection interactions
+- First-time visitor popup implementation
+
+### Phase 4: Integrations (MVP Functional)
+- Google Forms embedding and styling
+  - Trial sign-up form implementation
+  - Contact form implementation
+  - Form submission handling
+- Google Calendar Appointment Schedule integration
+  - Court booking link implementation
+  - Availability display
+- Google Maps embedding for location
+- Google Tag Manager implementation
+  - Basic pageview tracking
+  - Event tracking setup
+  - Conversion tracking configuration
+- Social sharing functionality
+- Newsletter sign-up integration (if applicable)
+
+### Phase 5: Content and Media (MVP Complete)
+- Professional copywriting implementation
+  - Homepage messaging
+  - Program descriptions
+  - About section narrative
+  - FAQ content
+- Media optimization and integration
+  - Image optimization and implementation
+  - Video embedding and configuration
+  - SVG illustrations and icons
+- Animation refinement and performance tuning
+- Content consistency review
+- Interactive elements final polish
+
+### Phase 6: Optimization and Launch Preparation (Production Ready)
+- Comprehensive performance optimization
+  - Image loading strategies
+  - Font optimization
+  - JavaScript optimization
+  - CSS optimization
+- Accessibility audit and remediation
+  - Keyboard navigation testing
+  - Screen reader compatibility
+  - Color contrast verification
+  - ARIA implementation
+- Cross-browser testing and fixes
+- Mobile responsiveness final review
+- SEO implementation
+  - Metadata optimization
+  - Structured data markup
+  - sitemap.xml creation
+  - robots.txt configuration
+- Analytics verification
+- Security review
+- Final quality assurance testing
+
+### Phase 7: Future Enhancements (Post-Launch)
+- Multilingual support (Vietnamese version)
+- Enhanced analytics dashboard
+- Virtual tour of facilities
+- Player progression tracking visualization
+- Advanced booking system with payments
+- Community forum or parent portal
+- Video training library
+- Event management system
+- Email marketing automation
+- Progressive Web App capabilities
+
+## Logical Dependency Chain
+
+### 1. Core Foundation (Week 1-2)
+- Project setup and configuration (Next.js, TypeScript, Tailwind)
+- Design system implementation
+- Base component library
+- Page templates and layout structure
+- CI/CD pipeline configuration
+
+**Dependencies:** None - This is the starting point
+
+### 2. Static Page Structure (Week 3-4)
+- Implementation of all page frameworks without final content
+- Navigation structure implementation
+- Responsive grid system across all pages
+- Basic routing functionality
+
+**Dependencies:** Core Foundation
+
+### 3. Interactive Component Development (Week 5-6)
+- GSAP animation framework integration
+- Development of all interactive UI components:
+  - Program cards
+  - Testimonial carousel
+  - FAQ accordion
+  - Navbar interactions
+  - Timeline visualization
+  - First-time visitor popup
+
+**Dependencies:** Static Page Structure
+
+### 4. Form and Integration Implementation (Week 7-8)
+- Google Forms embedding and styling
+- Google Calendar Appointment Schedule integration
+- Google Maps integration
+- Contact form implementation
+- Data flow configuration
+
+**Dependencies:** Static Page Structure
+
+### 5. Content Population and Media Integration (Week 9-10)
+- Professional copywriting implementation
+- Image and video optimization and integration
+- Icon system implementation
+- Content review and refinement
+
+**Dependencies:** Static Page Structure, Interactive Component Development
+
+### 6. Animation and Interaction Refinement (Week 11)
+- Page transition animations
+- Scroll-triggered animations
+- Micro-interactions implementation
+- Animation performance optimization
+
+**Dependencies:** Interactive Component Development, Content Population
+
+### 7. Analytics and Tracking Implementation (Week 11-12)
+- Google Tag Manager setup
+- Event tracking configuration
+- Conversion goal setup
+- Testing and verification
+
+**Dependencies:** Form and Integration Implementation
+
+### 8. Performance and Accessibility Optimization (Week 12-13)
+- Image optimization
+- Code splitting and lazy loading
+- Core Web Vitals optimization
+- Accessibility testing and remediation
+
+**Dependencies:** Content Population, Animation Refinement
+
+### 9. SEO Implementation and Final QA (Week 14-16)
+- Metadata optimization
+- Structured data markup
+- sitemap.xml and robots.txt creation
+- Cross-browser testing
+- Comprehensive QA testing
+- Final adjustments and launch preparation
+
+**Dependencies:** All previous phases
+
+## Risks and Mitigations
+
+### Technical Challenges
+
+#### Risk: Performance Impact of Animations
+**Description:** GSAP animations and complex interactions could negatively impact page performance, especially on mobile devices.
+
+**Mitigation:**
+- Implement animations using requestAnimationFrame and GPU acceleration
+- Use performance budgeting to monitor impact
+- Apply progressive enhancement approach: basic experience works without JS
+- Lazy-load animation scripts
+- Test animations on various devices throughout development
+
+#### Risk: Limited Styling Control with Google Forms
+**Description:** Google Forms offers limited styling options that may not align with the premium design aesthetic.
+
+**Mitigation:**
+- Create custom UI overlays where possible
+- Use CSS to style elements that can be targeted
+- Design form embedding with complementary visual elements
+- Set clear client expectations about Google Forms limitations
+- Consider alternative form solutions if styling becomes critical issue
+
+#### Risk: Complex Responsive Behavior
+**Description:** Premium design elements may be difficult to adapt across all device sizes while maintaining visual integrity.
+
+**Mitigation:**
+- Adopt mobile-first design approach
+- Create distinct design solutions for critical breakpoints
+- Thoroughly document responsive behavior expectations
+- Implement thorough testing on multiple devices
+- Prioritize functionality over exact visual matching on extreme sizes
+
+### MVP Scope Management
+
+#### Risk: Feature Creep Beyond Budget
+**Description:** Client requests for additional features could expand scope beyond the $10,000 budget.
+
+**Mitigation:**
+- Clearly document MVP requirements in this PRD
+- Implement change request process with impact assessment
+- Maintain prioritized feature backlog for post-MVP phases
+- Establish clear criteria for MVP completion
+- Regular client reviews to maintain alignment on scope
+
+#### Risk: Content Delays Impacting Timeline
+**Description:** Delays in receiving final content could impact development timeline.
+
+**Mitigation:**
+- Develop with placeholder content that matches final dimensions
+- Create content templates and guidelines early
+- Establish clear content delivery milestones and dependencies
+- Implement content in phases with most critical elements first
+- Build flexibility into the timeline for content revisions
+
+#### Risk: Browser Compatibility Challenges
+**Description:** Premium animations and effects may not work consistently across all browser environments.
+
+**Mitigation:**
+- Define browser support matrix early in development
+- Implement graceful degradation for older browsers
+- Use feature detection rather than browser detection
+- Thorough cross-browser testing throughout development
+- Documented fallback behaviors for unsupported features
+
+### Resource Constraints
+
+#### Risk: Animation Complexity Requiring Specialized Expertise
+**Description:** Complex GSAP animations may require specialized expertise beyond initial resource allocation.
+
+**Mitigation:**
+- Assess animation requirements early and identify skill gaps
+- Create animation prototypes to validate feasibility
+- Prioritize animations by importance and complexity
+- Consider simplified alternatives for highly complex animations
+- Allocate budget specifically for animation specialists if needed
+
+#### Risk: Performance Optimization Time Requirements
+**Description:** Achieving target performance metrics (≥90 Lighthouse score) may require significant optimization time.
+
+**Mitigation:**
+- Implement performance best practices from project start
+- Regular performance testing throughout development
+- Identify and address performance issues early
+- Establish performance budget for each page
+- Document optimization strategies for consistent implementation
+
+#### Risk: Integration Limitations
+**Description:** Third-party integrations (Google Forms, Calendar) may have limitations that affect functionality.
+
+**Mitigation:**
+- Research integration capabilities early in development
+- Build proof-of-concepts for critical integrations
+- Document limitations and workarounds
+- Develop fallback solutions for critical functionality
+- Set clear client expectations about integration boundaries
+
+## Appendix
+
+### Brand Guidelines
+
+#### Color Palette
+- Primary: Orange (#FF6A00) - CTAs, accents, buttons
+- Secondary: Blue (#0A5CAA) - Headers, footer, hero overlays
+- Tertiary: Gray (#A4A7AA) - UI elements, supplementary text
+- Text: Black (#1C1C1C) and White (#FFFFFF)
+
+#### Typography
+- Font Family: Poppins (Google Font)
+- Weights: Light (300), Regular (400), Medium (500), SemiBold (600), Bold (700)
+- Heading Styles:
+  - H1: Poppins Bold, 48px/56px
+  - H2: Poppins SemiBold, 36px/44px
+  - H3: Poppins Medium, 24px/32px
+  - H4: Poppins Medium, 20px/28px
+- Body Text:
+  - Large: Poppins Regular, 18px/28px
+  - Regular: Poppins Regular, 16px/24px
+  - Small: Poppins Light, 14px/20px
+
+#### Design Elements
+- Floating, rounded navigation with glass effect
+- Gradient backgrounds with subtle pattern overlays
+- Floating decorative elements for visual interest
+- Interactive cards with hover effects
+- Consistent iconography system
+
+### Technical Specifications
+
+#### Performance Targets
+- Mobile Lighthouse score ≥ 90
+- First Contentful Paint (FCP) ≤ 2.0s
+- Largest Contentful Paint (LCP) ≤ 2.5s
+- Total Blocking Time (TBT) ≤ 300ms
+- Cumulative Layout Shift (CLS) ≤ 0.1
+- Time to Interactive (TTI) ≤ 3.5s
+
+#### Browser Support
+- Chrome (latest 2 versions)
+- Firefox (latest 2 versions)
+- Safari (latest 2 versions)
+- Edge (latest 2 versions)
+- iOS Safari (latest 2 versions)
+- Android Chrome (latest 2 versions)
+
+#### Accessibility Requirements
+- WCAG 2.1 AA compliance
+- Keyboard navigation support
+- Screen reader compatibility
+- Minimum contrast ratio of 4.5:1
+- Focus indicators for interactive elements
+- Semantic HTML structure
+- ARIA attributes where necessary
+
+#### Security Requirements
+- HTTPS implementation with valid SSL certificate
+- Content Security Policy configuration
+- Cross-site scripting (XSS) protection
+- External resource integrity verification
+- Secure form handling practices
+
+### Research Findings
+
+#### Competitive Analysis Summary
+- Local competitors focus primarily on facilities rather than training programs
+- International basketball academies emphasize development pathways
+- Few competitors in Vietnam market offering holistic training approach
+- Program transparency is a significant differentiator
+- Mobile optimization is lacking among local competitors
+
+#### Target Audience Insights
+- Parents seek programs that balance skill development with character building
+- Safety and professional credentials are primary concerns
+- Scheduling flexibility is a key decision factor
+- Visual proof of facility quality is essential for conversion
+- Parents appreciate clear pricing and program structure
+- International standards and methodologies are highly valued
+
+#### SEO Keyword Research
+- Primary Keywords:
+  - "basketball academy vietnam"
+  - "youth basketball training"
+  - "basketball courts ho chi minh"
+  - "basketball classes for kids"
+- Secondary Keywords:
+  - "basketball camps vietnam"
+  - "basketball skills training"
+  - "youth sports vietnam"
+  - "basketball coaching vietnam"
+
+This PRD serves as the comprehensive blueprint for the Vietnam Basketball Academy website development project. It outlines all requirements, specifications, and development approach to ensure alignment between all stakeholders and successful project delivery.
