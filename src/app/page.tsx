@@ -31,11 +31,17 @@ export default function Home() {
           </AuroraText>
         </h1>
         <p className="text-xl md:text-2xl text-neutral-700 dark:text-neutral-300 mb-8">
-          We are building something cool for Vietnam Basketball Academy.
+          🏀 Dribbling into the digital court... 🏀
           <br />
-          Please check back later.
+          <span className="inline-block my-4">✨ Where passion meets precision, and hoops meet hopes ✨</span>
+          <br />
+          <span className="inline-block mb-4">🔥 Vietnam Basketball Academy is crafting something legendary 🔥</span>
+          <br />
+          <span className="italic">Bounce back soon for the ultimate basketball experience!</span>
+          <br />
+          <span className="inline-block mt-6 font-semibold">🏆 Game changing. Court shaking. History making. 🏆</span>
         </p>
       </div>
     </main>
   );
-}
+} 
