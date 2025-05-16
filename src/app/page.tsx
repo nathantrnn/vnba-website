@@ -31,7 +31,7 @@ export default function Home() {
           </AuroraText>
         </h1>
         <p className="text-xl md:text-2xl text-neutral-700 dark:text-neutral-300 mb-8">
-          We are building something cool for Vietnamese basketball fans.
+          We are building something cool for Vietnam Basketball Academy.
           <br />
           Please check back later.
         </p>
