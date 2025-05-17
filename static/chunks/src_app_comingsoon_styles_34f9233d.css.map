@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///Users/nathantr/2025-Projects/vnba-website/src/app/comingsoon/styles.css"],"sourcesContent":["@keyframes gradient {\n  0% {\n    background-position: 0% 50%;\n  }\n  50% {\n    background-position: 100% 50%;\n  }\n  100% {\n    background-position: 0% 50%;\n  }\n}\n\n.animate-gradient-custom {\n  background-size: 300% auto;\n  animation: gradient 10s ease infinite;\n  background-clip: text;\n  -webkit-background-clip: text;\n  color: transparent;\n  display: inline-block;\n  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.1);\n  -webkit-text-fill-color: transparent;\n} "],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;AAYA","debugId":null}}]
+}

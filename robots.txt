@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update this URL when your site is deployed
+Sitemap: https://your-github-username.github.io/vnba-website/sitemap.xml 

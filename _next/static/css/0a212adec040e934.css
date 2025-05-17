@@ -1,0 +1,1 @@
+@keyframes gradient{0%{background-position:0 50%}50%{background-position:100% 50%}to{background-position:0 50%}}.animate-gradient-custom{background-size:300% auto;animation:gradient 10s ease infinite;background-clip:text;-webkit-background-clip:text;color:transparent;display:inline-block;text-shadow:0 0 1px rgba(255,255,255,.1);-webkit-text-fill-color:transparent}
