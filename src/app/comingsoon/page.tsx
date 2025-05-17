@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { Particles } from '@/components/ui/particles';
-import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
+import { getAssetPath } from '@/lib/utils';
 import './styles.css';
 
 export default function ComingSoon() {
@@ -27,11 +28,15 @@ export default function ComingSoon() {
       <div className="w-full flex-1"></div>
       <div className="max-w-4xl mx-auto text-center z-10 relative">
         <div className="mb-8">
-          <img 
-            src="/logo/vnba-logo.png" 
-            alt="Vietnam Basketball Academy Logo" 
-            className="h-32 md:h-40 mx-auto mb-6"
-          />
+          <div className="relative h-32 md:h-40 mx-auto mb-6">
+            <Image 
+              src={getAssetPath("/logo/vnba-logo.png")}
+              alt="Vietnam Basketball Academy Logo"
+              fill
+              style={{objectFit: 'contain'}}
+              priority
+            />
+          </div>
           <h1 className="text-6xl md:text-7xl font-bold tracking-tight leading-[1.2]">
             <span 
               className="animate-gradient-custom bg-gradient-to-r from-primary via-accent via-secondary via-black to-primary py-1"

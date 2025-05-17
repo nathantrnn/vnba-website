@@ -1,6 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VNBA Website
 
-## Getting Started
+Official website for Vietnam Basketball Academy.
+
+## Development
 
 First, run the development server:
 
@@ -16,7 +18,37 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
+
+This website is configured to deploy to GitHub Pages automatically whenever code is pushed to the main branch.
+
+### Manual Deployment
+
+If you need to deploy manually, you can use:
+
+```bash
+npm run build   # Build the static site
+npm run deploy  # Deploy to GitHub Pages
+```
+
+## GitHub Pages Configuration
+
+The site is automatically deployed to GitHub Pages using GitHub Actions. The workflow is defined in `.github/workflows/deploy.yml`.
+
+To set up GitHub Pages:
+
+1. Go to your repository settings
+2. Navigate to "Pages" in the sidebar
+3. Under "Build and deployment", select:
+   - Source: "GitHub Actions"
+
+## Custom Domain (Optional)
+
+To use a custom domain:
+
+1. Update the `.github/CNAME` file with your domain
+2. Configure your DNS settings to point to GitHub Pages
+3. In your repository settings under Pages, add your custom domain
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
