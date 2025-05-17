@@ -64,6 +64,30 @@ module.exports = {
         sans: ['var(--font-poppins)'],
         poppins: ['var(--font-poppins)'],
       },
+      animation: {
+        'gradient-x': 'gradient-x 10s ease infinite',
+        'gradient': 'gradient-move 10s linear infinite',
+        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
+      keyframes: {
+        'gradient-x': {
+          '0%, 100%': {
+            'background-position': '0% 50%',
+          },
+          '50%': {
+            'background-position': '100% 50%',
+          },
+        },
+        'gradient': {
+          '0%': { 'background-position': '0% 50%' },
+          '100%': { 'background-position': '100% 50%' },
+        },
+        'gradient-move': {
+          '0%': { 'background-position': '0% center' },
+          '50%': { 'background-position': '100% center' },
+          '100%': { 'background-position': '0% center' },
+        },
+      },
     },
   },
   plugins: [],
