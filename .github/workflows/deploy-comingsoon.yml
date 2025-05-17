@@ -41,6 +41,12 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: ''
 
+      - name: Debug - Check output directory
+        run: |
+          ls -la
+          echo "Content of out directory (if exists):"
+          ls -la out || echo "out directory does not exist"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
