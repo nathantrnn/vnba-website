@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export', // Enable static exports
-  distDir: 'out',
+  distDir: '.next', // Keep default build directory
   images: {
     unoptimized: true, // Required for static export
   },

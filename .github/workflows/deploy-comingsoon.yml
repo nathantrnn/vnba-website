@@ -36,15 +36,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Debug - Check Next.js config
+        run: cat next.config.ts
+
       - name: Build with Next.js
-        run: npm run build
+        run: |
+          npm run build
+          # Create out directory if it doesn't exist (fallback)
+          mkdir -p out
         env:
           NEXT_PUBLIC_BASE_PATH: ''
+          NODE_ENV: production
 
-      - name: Debug - Check output directory
+      - name: Debug - List files
         run: |
+          echo "Workspace contents:"
           ls -la
-          echo "Content of out directory (if exists):"
+          echo "Content of .next directory:"
+          ls -la .next || echo ".next directory does not exist"
+          echo "Content of out directory:"
           ls -la out || echo "out directory does not exist"
 
       - name: Upload artifact
