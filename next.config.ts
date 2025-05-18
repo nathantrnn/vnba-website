@@ -5,7 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  // GitHub Pages URL path handling
+  // This is required for GitHub Pages deployment
+  basePath: process.env.NODE_ENV === 'production' ? '/vnba-website' : '',
+  // Set to true if using GitHub Pages
   trailingSlash: true,
 };
 

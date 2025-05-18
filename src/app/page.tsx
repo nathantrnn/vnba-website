@@ -4,9 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Particles } from '@/components/ui/particles';
 import { getAssetPath } from '@/lib/utils';
-
-// Importing the same styles from comingsoon
-import '../app/comingsoon/styles.css';
+import './styles.css';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);

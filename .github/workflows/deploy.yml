@@ -1,46 +1,35 @@
-name: Deploy to GitHub Pages
+name: Deploy Next.js Static Site
 
 on:
   push:
-    branches:
-      - comingsoon
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches: [ main, master ]
+  workflow_dispatch:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
           cache: 'npm'
-
-      - name: Install Dependencies
+          
+      - name: Install dependencies
         run: npm ci
-
-      - name: Build Static Site
-        run: npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-
-  deploy:
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
+        
+      - name: Build static site
+        run: npm run export
+        
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4 
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: out
+          clean: true
+          # Configure with a GitHub token with appropriate permissions
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages 
