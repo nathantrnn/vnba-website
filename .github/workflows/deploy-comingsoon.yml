@@ -40,22 +40,35 @@ jobs:
         run: cat next.config.ts
 
       - name: Build with Next.js
-        run: |
-          npm run build
-          # Create out directory if it doesn't exist (fallback)
-          mkdir -p out
+        run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: ''
           NODE_ENV: production
+
+      - name: Ensure index.html exists
+        run: |
+          ls -la out
+          if [ ! -f out/index.html ]; then
+            echo "Warning: index.html not found in out directory"
+            # Create a simple index.html as a fallback
+            if [ -f out/comingsoon/index.html ]; then
+              echo "Copying comingsoon/index.html to root as fallback"
+              cp out/comingsoon/index.html out/index.html
+            fi
+          fi
 
       - name: Debug - List files
         run: |
           echo "Workspace contents:"
           ls -la
-          echo "Content of .next directory:"
-          ls -la .next || echo ".next directory does not exist"
           echo "Content of out directory:"
-          ls -la out || echo "out directory does not exist"
+          ls -la out
+          echo "Checking root index.html:"
+          if [ -f out/index.html ]; then
+            echo "✅ index.html exists at root"
+          else
+            echo "❌ index.html is missing from root"
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

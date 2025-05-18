@@ -2,26 +2,34 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { Particles } from '@/components/ui/particles';
 
 export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white p-4 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto text-center z-10 relative">
-        <div className="mb-8">
-          <h1 className="text-6xl font-bold tracking-tight leading-[1.2] text-[#001F5B] mb-4">
-            404
-          </h1>
-          <h2 className="text-3xl font-semibold mb-4">Page Not Found</h2>
-          <p className="text-xl text-[#001F5B]/80 mb-8">
-            The page you are looking for doesn&apos;t exist or has been moved.
-          </p>
-          <Link 
-            href="/"
-            className="inline-block px-6 py-3 text-white bg-[#001F5B] rounded-md font-medium hover:bg-[#001F5B]/90 transition-colors"
-          >
-            Back to Home
-          </Link>
-        </div>
+      <Particles 
+        className="absolute inset-0 z-0" 
+        quantity={50}
+        staticity={50}
+        ease={40}
+        color="#001F5B"
+        size={1}
+      />
+      
+      <div className="text-center max-w-md z-10">
+        <h1 className="text-6xl font-bold text-[#001F5B] mb-4">404</h1>
+        
+        <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
+        
+        <h2 className="text-2xl font-bold text-[#001F5B] mb-4">Page Not Found</h2>
+        
+        <p className="text-[#001F5B]/70 mb-8">
+          Sorry, the page you are looking for doesn't exist or has been moved.
+        </p>
+        
+        <Link href="/" className="inline-block bg-primary hover:bg-primary-dark text-white font-medium py-3 px-8 rounded-full transition-colors">
+          Return Home
+        </Link>
       </div>
     </div>
   );
