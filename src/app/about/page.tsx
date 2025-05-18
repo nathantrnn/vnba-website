@@ -3,6 +3,9 @@
 import React, { useEffect, useState } from 'react';
 import { Particles } from '@/components/ui-magic/particles';
 import { getAssetPath } from '@/lib/utils';
+import { MainLayout } from '@/components/layouts/MainLayout';
+import { Container } from '@/components/ui/Container';
+import { AnimatedGradientText } from '@/components/ui-magic/animated-gradient-text';
 
 export default function About() {
   const [mounted, setMounted] = useState(false);
@@ -32,7 +35,8 @@ export default function About() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-white">
+    <MainLayout>
+      {/* Particles Background */}
       {mounted && (
         <Particles 
           className="absolute inset-0 z-0" 
@@ -44,42 +48,56 @@ export default function About() {
         />
       )}
       
-      <div className="w-full px-6 sm:px-10 md:px-12 max-w-md sm:max-w-lg md:max-w-2xl mx-auto text-center z-10 relative">
-        <div className="relative h-24 sm:h-32 md:h-40 mx-auto mb-5 md:mb-6">
-          <img 
-            src={getAssetPath("logo/vnba-logo.png")}
-            alt="Vietnam Basketball Academy Logo" 
-            className="h-full mx-auto"
-            style={{
-              maxHeight: "100%", 
-              objectFit: "contain",
-              height: "auto",
-              width: "auto",
-              maxWidth: "100%"
-            }}
-            width="160"
-            height="160"
-          />
-        </div>
-        
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight pb-1" style={{ fontFamily: "var(--font-poppins), -apple-system, BlinkMacSystemFont, system-ui, sans-serif" }}>
-          <span className="animate-gradient-custom bg-gradient-to-r from-primary via-accent via-secondary via-black to-primary py-1">
-            About Us
-          </span>
-        </h1>
-        
-        <div className="text-base sm:text-lg md:text-xl text-[#001F5B]/80 mt-3 sm:mt-4 mx-auto font-normal">
-          <p>About page content.</p>
-        </div>
-      </div>
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24">
+        <Container size="md">
+          <div className="text-center relative z-10">
+            {/* Logo */}
+            <div className="relative h-24 sm:h-32 md:h-40 mx-auto mb-8">
+              <img 
+                src={getAssetPath("logo/vnba-logo.png")}
+                alt="Vietnam Basketball Academy Logo" 
+                className="h-full mx-auto"
+                style={{
+                  maxHeight: "100%", 
+                  objectFit: "contain",
+                  height: "auto",
+                  width: "auto",
+                  maxWidth: "100%"
+                }}
+                width="160"
+                height="160"
+              />
+            </div>
+            
+            {/* Page Title */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight pb-1">
+              <AnimatedGradientText>About Us</AnimatedGradientText>
+            </h1>
+            
+            {/* Intro Text */}
+            <div className="text-base sm:text-lg md:text-xl text-[#001F5B]/80 mt-6 font-normal max-w-2xl mx-auto">
+              <p>Learn about our mission, vision, and team at Vietnam Basketball Academy.</p>
+            </div>
+          </div>
+        </Container>
+      </section>
       
-      <footer className="w-full px-6 sm:px-10 text-center z-10 absolute bottom-5 sm:bottom-6">
-        <p className="text-sm font-medium text-[#001F5B]/60">
-          © 2025 Vietnam Basketball Academy.
-          <br />
-          All rights reserved.
-        </p>
-      </footer>
-    </div>
+      {/* Main Content Section */}
+      <section className="relative py-12 md:py-16 bg-white/80 backdrop-blur-sm z-10">
+        <Container>
+          <div className="prose prose-lg max-w-none">
+            <h2>Our Story</h2>
+            <p>About page content goes here. This is where you would add all your main content about the academy.</p>
+            
+            <h2>Our Mission</h2>
+            <p>The mission of Vietnam Basketball Academy is to develop basketball talent in Vietnam through world-class training and education.</p>
+            
+            <h2>Our Team</h2>
+            <p>Meet the dedicated coaches and staff who make our academy possible.</p>
+          </div>
+        </Container>
+      </section>
+    </MainLayout>
   );
 } 
