@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   }
 };
 
+// Optimized for iPhone 14 Pro Max (430 × 932) and iPad Air (820 × 1180)
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -33,6 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+      </head>
       <body
         className={`${poppins.variable} font-sans antialiased bg-white`}
       >
