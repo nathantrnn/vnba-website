@@ -45,30 +45,36 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: ''
           NODE_ENV: production
 
-      - name: Ensure index.html exists
+      - name: Verify build output
         run: |
+          echo "Checking build output directory structure:"
           ls -la out
+          
+          # Check for index.html at root
           if [ ! -f out/index.html ]; then
-            echo "Warning: index.html not found in out directory"
-            # Create a simple index.html as a fallback
+            echo "Warning: index.html not found in root directory"
+            
+            # Check for existing content
             if [ -f out/comingsoon/index.html ]; then
-              echo "Copying comingsoon/index.html to root as fallback"
+              echo "Found comingsoon/index.html - copying to root"
               cp out/comingsoon/index.html out/index.html
+              echo "✅ Created index.html at root from comingsoon page"
+            elif [ -f out/404.html ]; then
+              echo "No content found - using 404.html as template"
+              sed 's/Page Not Found/Coming Soon/' out/404.html > out/index.html
+              echo "✅ Created index.html at root from 404 page"
+            else
+              echo "Creating minimal index.html"
+              echo "<html><head><meta http-equiv='refresh' content='0;url=comingsoon/'></head><body>Redirecting...</body></html>" > out/index.html
+              echo "✅ Created minimal redirect index.html"
             fi
-          fi
-
-      - name: Debug - List files
-        run: |
-          echo "Workspace contents:"
-          ls -la
-          echo "Content of out directory:"
-          ls -la out
-          echo "Checking root index.html:"
-          if [ -f out/index.html ]; then
-            echo "✅ index.html exists at root"
           else
-            echo "❌ index.html is missing from root"
+            echo "✅ index.html already exists at root"
           fi
+          
+          # Verify the index.html content
+          echo "Content of root index.html:"
+          head -n 20 out/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
