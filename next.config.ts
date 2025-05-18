@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
   assetPrefix: process.env.NODE_ENV === 'production' ? '/vnba-website' : '',
   // Ensure fonts are properly loaded in static export
   optimizeFonts: true,
+  // Performance optimizations
+  compress: true,
+  poweredByHeader: false,
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 export default nextConfig;

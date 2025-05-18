@@ -8,7 +8,27 @@ export default function ComingSoon() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    // Performance optimization - defer non-critical operations
+    const timer = setTimeout(() => {
+      setMounted(true);
+      
+      // Font loading for iOS
+      document.body.style.fontFamily = 'var(--font-poppins), -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif';
+      document.body.classList.add('page-loaded');
+      
+      // Improve iOS font rendering
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        document.documentElement.setAttribute('style', '-webkit-font-smoothing: antialiased');
+      }
+    }, 100); // Small delay to allow initial render
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Preload critical image
+  useEffect(() => {
+    const img = new Image();
+    img.src = getAssetPath("logo/vnba-logo.png");
   }, []);
 
   return (
@@ -16,9 +36,9 @@ export default function ComingSoon() {
       {mounted && (
         <Particles 
           className="absolute inset-0 z-0" 
-          quantity={100}
-          staticity={30}
-          ease={40}
+          quantity={80} // Reduced for better performance
+          staticity={40}
+          ease={35}
           color="#001F5B"
           size={1}
         />
@@ -30,11 +50,19 @@ export default function ComingSoon() {
             src={getAssetPath("logo/vnba-logo.png")}
             alt="Vietnam Basketball Academy Logo" 
             className="h-full mx-auto"
-            style={{maxHeight: "100%", objectFit: "contain"}}
+            style={{
+              maxHeight: "100%", 
+              objectFit: "contain",
+              height: "auto", // Improve CLS
+              width: "auto",
+              maxWidth: "100%"
+            }}
+            width="160"
+            height="160"
           />
         </div>
         
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight whitespace-nowrap pb-1">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight whitespace-nowrap pb-1" style={{ fontFamily: "var(--font-poppins), -apple-system, BlinkMacSystemFont, system-ui, sans-serif" }}>
           <span className="animate-gradient-custom bg-gradient-to-r from-primary via-accent via-secondary via-black to-primary py-1">
             Coming Soon
           </span>
