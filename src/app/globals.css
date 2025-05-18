@@ -122,3 +122,106 @@ body {
   color: var(--foreground);
   font-family: var(--font-poppins), sans-serif;
 }
+
+/* Animation Styles */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-custom {
+  background-size: 300% auto;
+  animation: gradient 10s ease infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.1);
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  padding-bottom: 0.15em;
+}
+
+/* Mobile optimizations - premium feel */
+@media (max-width: 640px) {
+  .animate-gradient-custom {
+    /* Optimized animation for better mobile performance */
+    background-size: 200% auto;
+    /* Add slight letter spacing for premium feel on mobile */
+    letter-spacing: -0.01em;
+    /* Add slight padding to ensure text fits */
+    padding: 0 0.05em;
+    /* Better line height for mobile */
+    line-height: 1.2;
+    /* Additional padding to ensure descenders aren't cut off */
+    padding-bottom: 0.2em;
+  }
+  
+  /* Optimize vertical spacing on mobile */
+  .min-h-screen {
+    min-height: 100svh; /* Use small viewport height when available */
+  }
+  
+  /* Footer spacing on mobile */
+  footer p {
+    line-height: 1.4;
+  }
+}
+
+/* iPhone 14 Pro Max specific (430 × 932) */
+@media (min-width: 390px) and (max-width: 430px) and (min-height: 844px) and (max-height: 932px) {
+  /* Specific adjustments for iPhone 14 Pro Max */
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  
+  p.whitespace-nowrap {
+    font-size: 0.9rem; /* Slightly smaller text to ensure it fits in one line */
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .animate-gradient-custom {
+    background-size: 250% auto;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    padding-bottom: 0.18em;
+  }
+}
+
+/* iPad Air specific (820 × 1180) */
+@media (min-width: 820px) and (max-width: 834px) and (min-height: 1180px) and (max-height: 1194px) {
+  /* Specific adjustments for iPad Air */
+  p.whitespace-nowrap {
+    font-size: 1.2rem;
+  }
+  
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Handle small heights */
+@media (max-height: 600px) {
+  footer.absolute.bottom-5 {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Safe area inset for iOS devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  footer {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+}

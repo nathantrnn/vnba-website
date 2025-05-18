@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { Particles } from '@/components/ui/particles';
 import { getAssetPath } from '@/lib/utils';
-import './styles.css';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
