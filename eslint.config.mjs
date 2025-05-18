@@ -14,9 +14,18 @@ const eslintConfig = [
   {
     rules: {
       "react-hooks/exhaustive-deps": "warn",
-      "@next/next/no-img-element": "warn"
+      "@next/next/no-img-element": "warn",
+      "react/no-unescaped-entities": "error"
     },
+    files: ["src/**/*.{js,jsx,ts,tsx}"],
   },
+  {
+    // Disable exhaustive-deps for particles.tsx as it has circular dependencies
+    files: ["src/components/ui/particles.tsx"],
+    rules: {
+      "react-hooks/exhaustive-deps": "off"
+    }
+  }
 ];
 
 export default eslintConfig;

@@ -24,7 +24,7 @@ export default function NotFound() {
         <h2 className="text-2xl font-bold text-[#001F5B] mb-4">Page Not Found</h2>
         
         <p className="text-[#001F5B]/70 mb-8">
-          Sorry, the page you are looking for doesn't exist or has been moved.
+          Sorry, we could not find the page you are looking for. It may have been moved or deleted.
         </p>
         
         <Link href="/" className="inline-block bg-primary hover:bg-primary-dark text-white font-medium py-3 px-8 rounded-full transition-colors">
