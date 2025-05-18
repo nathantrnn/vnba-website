@@ -25,8 +25,8 @@ export default function Home() {
         />
       )}
       
-      <div className="w-full px-6 sm:px-8 md:px-12 max-w-md sm:max-w-lg md:max-w-2xl mx-auto text-center z-10 relative">
-        <div className="relative h-28 sm:h-32 md:h-40 mx-auto mb-6 md:mb-8">
+      <div className="w-full px-4 sm:px-6 md:px-8 max-w-md sm:max-w-lg md:max-w-2xl mx-auto text-center z-10 relative">
+        <div className="relative h-24 sm:h-32 md:h-40 mx-auto mb-5 md:mb-6">
           <img 
             src={getAssetPath("logo/vnba-logo.png")}
             alt="Vietnam Basketball Academy Logo" 
@@ -35,18 +35,18 @@ export default function Home() {
           />
         </div>
         
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight whitespace-nowrap">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight whitespace-nowrap">
           <span className="animate-gradient-custom bg-gradient-to-r from-primary via-accent via-secondary via-black to-primary py-1">
             Coming Soon
           </span>
         </h1>
         
-        <p className="text-lg sm:text-xl md:text-2xl text-[#001F5B]/80 mt-6 mx-auto font-normal max-w-xs sm:max-w-md md:max-w-lg">
+        <p className="text-lg sm:text-xl md:text-2xl text-[#001F5B]/80 mt-5 md:mt-6 mx-auto font-normal max-w-xs sm:max-w-md md:max-w-lg leading-relaxed">
           We are building something amazing. Stay tuned!
         </p>
       </div>
       
-      <footer className="w-full px-6 sm:px-8 text-center z-10 absolute bottom-6 sm:bottom-8">
+      <footer className="w-full px-4 sm:px-6 text-center z-10 absolute bottom-5 sm:bottom-6">
         <p className="text-sm font-medium text-[#001F5B]/60">© {new Date().getFullYear()} Vietnam Basketball Academy. All rights reserved.</p>
       </footer>
     </div>
