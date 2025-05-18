@@ -12,6 +12,7 @@ interface MainLayoutProps {
   className?: string;
   withBackground?: boolean;
   backgroundClass?: string;
+  withSafePadding?: boolean;
 }
 
 export function MainLayout({ 
@@ -21,6 +22,7 @@ export function MainLayout({
   className,
   withBackground = false,
   backgroundClass = "bg-white",
+  withSafePadding = true,
 }: MainLayoutProps) {
   // Optimize font rendering and performance for different devices
   useEffect(() => {
@@ -51,6 +53,8 @@ export function MainLayout({
         // Use CSS variable for mobile viewport height
         "min-h-[calc(var(--vh,1vh)*100)]",
         withBackground ? backgroundClass : null,
+        // Add container spacing system with custom CSS variables
+        "container-spacing",
         className
       )}
     >
