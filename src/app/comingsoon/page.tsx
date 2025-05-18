@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { Particles } from '@/components/ui/particles';
 import { getAssetPath } from '@/lib/utils';
 import './styles.css';

@@ -14,7 +14,8 @@ const eslintConfig = [
   {
     rules: {
       "react-hooks/exhaustive-deps": "warn",
-      "@next/next/no-img-element": "warn"
+      "@next/next/no-img-element": "off",
+      "@typescript-eslint/no-unused-vars": "error"
     },
   },
 ];
