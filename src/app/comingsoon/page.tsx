@@ -42,7 +42,7 @@ export default function ComingSoon() {
         
         <div className="text-base sm:text-lg md:text-xl text-[#001F5B]/80 mt-3 sm:mt-4 mx-auto font-normal">
           <p className="whitespace-nowrap">We are building something amazing.</p>
-          <p className="mt-1">Stay tuned!</p>
+          <p className="whitespace-nowrap mt-1">Stay tuned!</p>
         </div>
       </div>
       
