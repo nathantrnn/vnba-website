@@ -77,16 +77,6 @@ export default function ComingSoon() {
           <p className="whitespace-nowrap">We are building something amazing.</p>
           <p className="whitespace-nowrap mt-1">Stay tuned!</p>
         </div>
-
-        <div className="mt-8 sm:mt-10">
-          <a 
-            href="mailto:contact@vnba.com" 
-            className="btn btn-primary"
-            aria-label="Contact Us via Email"
-          >
-            Contact Us
-          </a>
-        </div>
       </div>
       
       <footer className="w-full px-6 sm:px-10 text-center z-fixed absolute bottom-5 sm:bottom-6 pb-safe">

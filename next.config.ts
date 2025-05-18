@@ -10,15 +10,17 @@ const nextConfig: NextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/vnba-website' : '',
   // Set to true if using GitHub Pages
   trailingSlash: true,
-  // Disable image optimization for static exports
+  // Asset prefix for GitHub Pages
   assetPrefix: process.env.NODE_ENV === 'production' ? '/vnba-website' : '',
-  // Ensure fonts are properly loaded in static export
-  optimizeFonts: true,
   // Performance optimizations
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
+  // Configure path aliases explicitly
+  experimental: {
+    typedRoutes: true,
+    esmExternals: true,
+  },
 };
 
 export default nextConfig;

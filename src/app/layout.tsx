@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import ViewportHeightScript from "@/components/global/ViewportHeightScript";
 
 // Optimize font loading with preload and display swap
 const poppins = Poppins({
@@ -80,28 +81,6 @@ export default function RootLayout({
         {/* Accessibility */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        
-        {/* Add support for viewport height on mobile browsers */}
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              // Set CSS variable for viewport height to handle mobile browsers' address bar
-              function setViewportHeight() {
-                let vh = window.innerHeight * 0.01;
-                document.documentElement.style.setProperty('--vh', \`\${vh}px\`);
-              }
-              
-              // Set initially and on resize
-              setViewportHeight();
-              window.addEventListener('resize', setViewportHeight);
-              
-              // Force iOS font rendering consistency
-              if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                document.documentElement.style.webkitFontSmoothing = 'antialiased';
-              }
-            })();
-          `,
-        }}/>
       </head>
       <body
         className="font-sans antialiased bg-background text-foreground flex flex-col min-h-screen"
@@ -112,6 +91,9 @@ export default function RootLayout({
           textRendering: 'optimizeSpeed',
         }}
       >
+        {/* Client component to handle viewport height calculations */}
+        <ViewportHeightScript />
+        
         <div className="flex-grow">
           <div className="mx-auto max-w-screen-2xl">
             {children}
