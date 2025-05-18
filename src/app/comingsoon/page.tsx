@@ -13,7 +13,7 @@ export default function ComingSoon() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-between bg-white p-4 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       {mounted && (
         <Particles 
           className="absolute inset-0 z-0" 
@@ -24,33 +24,29 @@ export default function ComingSoon() {
           size={1}
         />
       )}
-      <div className="w-full flex-1"></div>
-      <div className="max-w-4xl mx-auto text-center z-10 relative">
-        <div className="mb-8">
-          <div className="relative h-32 md:h-40 mx-auto mb-6">
-            {/* Replace Image component with img for static export reliability */}
-            <img 
-              src={getAssetPath("logo/vnba-logo.png")}
-              alt="Vietnam Basketball Academy Logo" 
-              className="h-full mx-auto"
-              style={{maxHeight: "100%", objectFit: "contain"}}
-            />
-          </div>
-          <h1 className="text-6xl md:text-7xl font-bold tracking-tight leading-[1.2]">
-            <span 
-              className="animate-gradient-custom bg-gradient-to-r from-primary via-accent via-secondary via-black to-primary py-1"
-            >
-              Coming Soon
-            </span>
-          </h1>
+      
+      <div className="w-full px-6 sm:px-8 md:px-12 max-w-md sm:max-w-lg md:max-w-2xl mx-auto text-center z-10 relative">
+        <div className="relative h-28 sm:h-32 md:h-40 mx-auto mb-6 md:mb-8">
+          <img 
+            src={getAssetPath("logo/vnba-logo.png")}
+            alt="Vietnam Basketball Academy Logo" 
+            className="h-full mx-auto"
+            style={{maxHeight: "100%", objectFit: "contain"}}
+          />
         </div>
         
-        <p className="text-xl md:text-2xl text-[#001F5B]/80 mb-10 max-w-2xl mx-auto font-normal leading-relaxed mt-4">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight whitespace-nowrap">
+          <span className="animate-gradient-custom bg-gradient-to-r from-primary via-accent via-secondary via-black to-primary py-1">
+            Coming Soon
+          </span>
+        </h1>
+        
+        <p className="text-lg sm:text-xl md:text-2xl text-[#001F5B]/80 mt-6 mx-auto font-normal max-w-xs sm:max-w-md md:max-w-lg">
           We are building something amazing. Stay tuned!
         </p>
       </div>
-      <div className="w-full flex-1"></div>
-      <footer className="w-full text-center z-10 pt-10 pb-4">
+      
+      <footer className="w-full px-6 sm:px-8 text-center z-10 absolute bottom-6 sm:bottom-8">
         <p className="text-sm font-medium text-[#001F5B]/60">© {new Date().getFullYear()} Vietnam Basketball Academy. All rights reserved.</p>
       </footer>
     </div>

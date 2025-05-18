@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -17,6 +17,15 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: 'cover',
+  themeColor: '#ffffff'
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,9 +34,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} antialiased`}
+        className={`${poppins.variable} font-sans antialiased bg-white`}
       >
-        {children}
+        <div className="mx-auto max-w-screen-2xl">
+          {children}
+        </div>
       </body>
     </html>
   );

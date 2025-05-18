@@ -19,4 +19,35 @@
   display: inline-block;
   text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.1);
   -webkit-text-fill-color: transparent;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .animate-gradient-custom {
+    /* Smaller animation scale on mobile for better performance */
+    background-size: 200% auto;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .animate-gradient-custom {
+    background-size: 250% auto;
+  }
+}
+
+/* Handle small heights */
+@media (max-height: 600px) {
+  footer.absolute.bottom-6 {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Safe area inset for iOS devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 } 
