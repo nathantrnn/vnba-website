@@ -2,7 +2,7 @@
 
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
+import { AnimatedGradientText } from "@/components/ui-magic/animated-gradient-text";
 
 export function FeaturedPrograms() {
   return (

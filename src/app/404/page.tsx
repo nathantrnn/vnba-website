@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Particles } from '@/components/ui/particles';
+import { Particles } from '@/components/ui-magic/particles';
 import { getAssetPath } from '@/lib/utils';
 
 export default function NotFoundPage() {

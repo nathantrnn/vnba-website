@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Particles } from "@/components/ui/particles";
+import { Particles } from "@/components/ui-magic/particles";
 import { useState, useEffect } from "react";
 
 interface HeroProps {
