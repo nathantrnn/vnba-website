@@ -7,6 +7,8 @@ const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial', 'sans-serif'],
 });
 
 export const metadata: Metadata = {
@@ -33,15 +35,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light" style={{ colorScheme: 'light' }}>
+    <html lang="en" className={`light ${poppins.variable}`} style={{ colorScheme: 'light' }}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         {/* Force light mode */}
         <meta name="color-scheme" content="light" />
       </head>
       <body
-        className={`${poppins.variable} font-sans antialiased bg-white text-black`}
-        style={{ backgroundColor: '#ffffff' }}
+        className="font-sans antialiased bg-white text-black"
+        style={{ 
+          backgroundColor: '#ffffff',
+          fontFamily: 'var(--font-poppins), system-ui, sans-serif'
+        }}
       >
         <div className="mx-auto max-w-screen-2xl">
           {children}

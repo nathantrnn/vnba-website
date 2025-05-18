@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   // Disable image optimization for static exports
   assetPrefix: process.env.NODE_ENV === 'production' ? '/vnba-website' : '',
+  // Ensure fonts are properly loaded in static export
+  optimizeFonts: true,
 };
 
 export default nextConfig;
