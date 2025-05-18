@@ -42,7 +42,7 @@
   --black: #171717;
   --white: #FFFFFF;
   
-  /* Base UI Colors */
+  /* Base UI Colors - Force Light Mode */
   --background: var(--white);
   --foreground: var(--black);
   --border: var(--gray-300);
@@ -104,7 +104,8 @@
   --font-mono: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Remove dark mode support completely */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--gray-900);
     --foreground: var(--gray-100);
@@ -114,10 +115,10 @@
     --muted: var(--gray-600);
     --muted-foreground: var(--gray-400);
   }
-}
+} */
 
 body {
-  background: var(--background);
+  background: var(--white) !important;
   color: var(--foreground);
   font-family: var(--font-poppins), sans-serif;
 }

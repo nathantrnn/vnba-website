@@ -33,12 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light" style={{ colorScheme: 'light' }}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        {/* Force light mode */}
+        <meta name="color-scheme" content="light" />
       </head>
       <body
-        className={`${poppins.variable} font-sans antialiased bg-white`}
+        className={`${poppins.variable} font-sans antialiased bg-white text-black`}
+        style={{ backgroundColor: '#ffffff' }}
       >
         <div className="mx-auto max-w-screen-2xl">
           {children}
