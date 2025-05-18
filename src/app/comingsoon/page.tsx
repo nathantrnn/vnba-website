@@ -29,12 +29,12 @@ export default function ComingSoon() {
       <div className="max-w-4xl mx-auto text-center z-10 relative">
         <div className="mb-8">
           <div className="relative h-32 md:h-40 mx-auto mb-6">
-            <Image 
-              src={getAssetPath("/logo/vnba-logo.png")}
-              alt="Vietnam Basketball Academy Logo"
-              fill
-              style={{objectFit: 'contain'}}
-              priority
+            {/* Replace Image component with img for static export reliability */}
+            <img 
+              src={getAssetPath("logo/vnba-logo.png")}
+              alt="Vietnam Basketball Academy Logo" 
+              className="h-full mx-auto"
+              style={{maxHeight: "100%", objectFit: "contain"}}
             />
           </div>
           <h1 className="text-6xl md:text-7xl font-bold tracking-tight leading-[1.2]">
