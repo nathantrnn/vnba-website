@@ -30,21 +30,13 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.DEPLOY_KEY }}
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          known_hosts: unnecessary
           if_key_exists: replace
-          config: |
-            Host vnba
-              HostName ${{ secrets.DEPLOY_HOST }}
-              User ${{ secrets.DEPLOY_USER }}
-              IdentityFile ~/.ssh/id_rsa
-              StrictHostKeyChecking no
       
-      - name: Verify SSH connection
-        run: |
-          # Verify SSH key is properly set up
-          ssh -T -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'echo SSH connection successful'
+      - name: Add known hosts
+        run: ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
       
       - name: Deploy with rsync
         run: |
           # Next.js static export puts files in the 'out' directory
-          rsync -avz --delete -e "ssh -v -o StrictHostKeyChecking=no" ./out/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/var/www/vnba.edu.vn/html/ 
+          rsync -avz --delete ./out/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/var/www/vnba.edu.vn/html/ 
