@@ -8,49 +8,38 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Deployment
 
-This website is configured to deploy to GitHub Pages automatically whenever code is pushed to the main branch.
+This website is configured to deploy automatically to vnba.edu.vn whenever code is pushed to the master branch.
 
-### Manual Deployment
+### CI/CD Pipeline
 
-If you need to deploy manually, you can use:
+The deployment is handled by GitHub Actions. The workflow is defined in `.github/workflows/deploy.yml`.
 
-```bash
-npm run build   # Build the static site
-npm run deploy  # Deploy to GitHub Pages
-```
+The pipeline performs the following steps:
+1. Checks out the code
+2. Sets up Node.js
+3. Installs dependencies
+4. Builds the static site
+5. Deploys to the production server using rsync
+6. Verifies the deployment
 
-## GitHub Pages Configuration
+## Project Structure
 
-The site is automatically deployed to GitHub Pages using GitHub Actions. The workflow is defined in `.github/workflows/deploy.yml`.
+- `src/app`: Contains all page components using Next.js App Router
+- `src/components`: Reusable UI components
+- `src/lib`: Utility functions and shared code
+- `public`: Static assets like images and fonts
 
-To set up GitHub Pages:
+## Technology Stack
 
-1. Go to your repository settings
-2. Navigate to "Pages" in the sidebar
-3. Under "Build and deployment", select:
-   - Source: "GitHub Actions"
-
-## Custom Domain (Optional)
-
-To use a custom domain:
-
-1. Update the `.github/CNAME` file with your domain
-2. Configure your DNS settings to point to GitHub Pages
-3. In your repository settings under Pages, add your custom domain
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 15.3
+- **Styling**: Tailwind CSS
+- **Deployment**: GitHub Actions → Static Export → Custom VPS
 
 ## Learn More
 
