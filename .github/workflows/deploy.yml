@@ -1,53 +1,51 @@
-name: Deploy to vnba.edu.vn
+name: Deploy to Production
 
 on:
   push:
     branches: [ master, main ]
+  workflow_dispatch:
 
 jobs:
   deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
-        
+        with:
+          fetch-depth: 0
+      
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20' # Using latest LTS version of Node
-          cache: 'npm' # Caching npm dependencies
+          node-version: '20'
+          cache: 'npm'
       
       - name: Install dependencies
         run: npm ci
       
-      - name: Build and Export
+      - name: Build static site
         run: |
           npm run build
-          # Verify output directory exists
+          echo "Build completed, checking output directory:"
           ls -la ./out
       
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.0
         with:
-          key: ${{ secrets.DEPLOY_KEY }}
-          known_hosts: unnecessary
-          if_key_exists: replace
-          config: |
-            Host ${{ secrets.DEPLOY_HOST }}
-              StrictHostKeyChecking no
-              IdentityFile ~/.ssh/id_rsa
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       
-      - name: Debug - check SSH key permissions
+      - name: Add host key
         run: |
-          ls -la ~/.ssh
-          chmod 600 ~/.ssh/id_rsa
-          ls -la ~/.ssh/id_rsa
-      
-      - name: Debug - Test SSH connection
-        run: ssh -v ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'whoami || echo "Failed to connect"'
-        continue-on-error: true
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 112.78.3.202 >> ~/.ssh/known_hosts
       
       - name: Deploy with rsync
         run: |
-          # Next.js static export puts files in the 'out' directory
-          rsync -avz --delete -e "ssh -v -o StrictHostKeyChecking=no" ./out/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/var/www/vnba.edu.vn/html/ 
+          rsync -avz --delete ./out/ deploy@112.78.3.202:/var/www/vnba.edu.vn/html/
+      
+      - name: Verify deployment
+        run: |
+          echo "Verifying deployment..."
+          curl -s -o /dev/null -w "%{http_code}" https://vnba.edu.vn || echo "Site may not be accessible yet" 
