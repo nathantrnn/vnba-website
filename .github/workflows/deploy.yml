@@ -32,11 +32,22 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           known_hosts: unnecessary
           if_key_exists: replace
+          config: |
+            Host ${{ secrets.DEPLOY_HOST }}
+              StrictHostKeyChecking no
+              IdentityFile ~/.ssh/id_rsa
       
-      - name: Add known hosts
-        run: ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+      - name: Debug - check SSH key permissions
+        run: |
+          ls -la ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ls -la ~/.ssh/id_rsa
+      
+      - name: Debug - Test SSH connection
+        run: ssh -v ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} 'whoami || echo "Failed to connect"'
+        continue-on-error: true
       
       - name: Deploy with rsync
         run: |
           # Next.js static export puts files in the 'out' directory
-          rsync -avz --delete ./out/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/var/www/vnba.edu.vn/html/ 
+          rsync -avz --delete -e "ssh -v -o StrictHostKeyChecking=no" ./out/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/var/www/vnba.edu.vn/html/ 
