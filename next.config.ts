@@ -6,12 +6,12 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  // This is required for GitHub Pages deployment
-  basePath: process.env.NODE_ENV === 'production' ? '/vnba-website' : '',
-  // Set to true if using GitHub Pages
+  // No basePath needed for root domain deployment
+  basePath: '',
+  // Set to true for better trailing slash handling
   trailingSlash: true,
-  // Asset prefix for GitHub Pages
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/vnba-website' : '',
+  // No asset prefix needed for root domain deployment
+  assetPrefix: '',
   // Performance optimizations
   compress: true,
   poweredByHeader: false,
