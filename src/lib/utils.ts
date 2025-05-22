@@ -6,13 +6,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getBasePath() {
-  // For static sites, we need to check if we're in production or development
-  if (typeof window !== 'undefined') {
-    // Client-side code - detect from hostname if needed
-    return window.location.pathname.startsWith('/vnba-website') ? '/vnba-website' : '';
-  }
-  // Server-side rendering or static generation
-  return process.env.NODE_ENV === 'production' ? '/vnba-website' : '';
+  // For custom domain deployment, we don't need a basePath
+  return '';
 }
 
 export function getAssetPath(path: string) {
